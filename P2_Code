@@ -1,0 +1,30 @@
+import pandas as pd 
+import numpy as np 
+
+import warnings 
+warnings.filterwarnings('ignore')
+
+under_pressure=pd.read_csv('Undder Pressure .csv')
+
+under_pressure.sample(17)
+
+
+
+point = 0
+
+if under_pressure.iloc[0]['pressure_dropbacks'] > under_pressure.iloc[1]['pressure_dropbacks']:
+    point = point + 1
+    print(" %s is better than %s" % (under_pressure.iloc[0]['player'],under_pressure.iloc[1]['player']))
+    print("His Point Total exceededes the other payers by:", point, 'point')
+else:
+    print("Player 2 is better than player 1")
+
+
+point = 0
+
+if under_pressure.iloc[1]['pressure_interceptions'] > under_pressure.iloc[2]['pressure_interceptions']:
+    point = point + 1
+    print("2 is better than 1")
+    print("Point:", point)
+else:
+    print("Player 2 is better than player 1")
